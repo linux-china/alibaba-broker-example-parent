@@ -1,0 +1,8 @@
+### kotlin suspend method
+GET http://localhost:8181/kt/hello
+
+### kotlin Flow
+GET http://localhost:8181/kt/flow
+
+### Get
+GET http://localhost:8180/demo
