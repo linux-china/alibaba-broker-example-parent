@@ -8,12 +8,15 @@ import kotlinx.coroutines.flow.Flow
  * @author linux_china
  */
 interface UserKotlinService {
-    suspend fun getOwner(): String
+    //FNF
+    suspend fun job1()
 
+    //Request/Response
     suspend fun getNickById(id: Int): String
 
-    fun getAllNames(): Flow<String>
-
+    //Request/Stream
     fun findNamesByType(type: Int): Flow<String>
 
+    //channel
+    fun findNamesByIdFlow(idFlow: Flow<Int>): Flow<String>
 }
