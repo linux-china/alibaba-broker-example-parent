@@ -2,6 +2,7 @@ package com.alibaba.spring.boot.rsocket.demo.kotlin
 
 import com.alibaba.user.UserKotlinService
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -23,8 +24,13 @@ class CoroutineController {
         return "Hello " + userKotlinService.getNickById(1)
     }
 
-    @GetMapping("/flow")
-    fun flow(): Flow<String> {
-        return userKotlinService.getAllNames()
+    @GetMapping("/stream1")
+    fun stream1(): Flow<String> {
+        return userKotlinService.findNamesByType(1)
+    }
+
+    @GetMapping("/channel1")
+    fun channel1(): Flow<String> {
+        return userKotlinService.findNamesByIdFlow(arrayOf(1, 2).asFlow())
     }
 }
