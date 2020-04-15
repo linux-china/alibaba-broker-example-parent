@@ -1,6 +1,10 @@
 package com.alibaba.user
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class KotlinUser(val id: Int, val nick: String, val email: String, val phone: String)
 
 /**
  * User Kotlin Service
@@ -13,6 +17,8 @@ interface UserKotlinService {
 
     //Request/Response
     suspend fun getNickById(id: Int): String
+
+    suspend fun findUserById(id: Int): KotlinUser
 
     //Request/Stream
     fun findNamesByType(type: Int): Flow<String>
