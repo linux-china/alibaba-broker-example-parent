@@ -1,5 +1,6 @@
 package com.alibaba.spring.boot.rsocket.demo.kotlin
 
+import com.alibaba.user.KotlinUser
 import com.alibaba.user.UserKotlinService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -22,6 +23,11 @@ class CoroutineController {
     @GetMapping("/hello")
     suspend fun hello(): String {
         return "Hello " + userKotlinService.getNickById(1)
+    }
+
+    @GetMapping("/protobuf/user")
+    suspend fun ktUser(): KotlinUser {
+        return userKotlinService.findUserById(1)
     }
 
     @GetMapping("/stream1")
