@@ -26,14 +26,17 @@ class KotlinUserTest {
 
     @Test
     fun testProtobuf() {
-        val protoBytes = ProtoBuf.dump(KotlinUser.serializer(), constructUser())
-        val user = ProtoBuf.load(KotlinUser.serializer(), protoBytes);
+        val serializer = KotlinUser.serializer()
+        println(serializer.javaClass)
+        val protoBytes = ProtoBuf.dump(serializer, constructUser())
+        val user = ProtoBuf.load(serializer, protoBytes);
         println(user.nick)
     }
 
     @Test
     fun testCbor() {
         val cborBytes = Cbor.dump(KotlinUser.serializer(), constructUser())
+        println(cborBytes.size)
         val user = Cbor.load(KotlinUser.serializer(), cborBytes);
         println(user.nick)
     }

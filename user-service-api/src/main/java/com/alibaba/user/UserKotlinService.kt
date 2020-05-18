@@ -1,5 +1,6 @@
 package com.alibaba.user
 
+import com.alibaba.rsocket.ServiceMapping
 import kotlinx.coroutines.flow.Flow
 import kotlinx.serialization.Serializable
 
@@ -18,6 +19,7 @@ interface UserKotlinService {
     //Request/Response
     suspend fun getNickById(id: Int): String
 
+    @ServiceMapping(value = "findUserById", paramEncoding = "application/x-hessian", resultEncoding = "application/vnd.google.protobuf")
     suspend fun findUserById(id: Int): KotlinUser
 
     //Request/Stream
