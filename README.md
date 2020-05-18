@@ -1,7 +1,8 @@
 RSocket Broker Example
 ======================
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/linux-china/alibaba-broker-example-parent/JavaBuildWithMaven)
 
-requester <-> Broker <-> responder 三者通讯模型
+Example: requester <-> Broker <-> responder 三者通讯模型
 
 # Maven Modules
 
