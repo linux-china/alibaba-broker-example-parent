@@ -1,6 +1,7 @@
 package com.alibaba.spring.boot.rsocket.demo
 
 import com.alibaba.rsocket.RSocketService
+import com.alibaba.user.KotlinUser
 import com.alibaba.user.UserKotlinService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -21,6 +22,10 @@ class UserKotlinServiceImpl : UserKotlinService {
 
     override suspend fun getNickById(id: Int): String {
         return "nick: $id"
+    }
+
+    override suspend fun findUserById(id: Int): KotlinUser {
+        return KotlinUser(1, "nick", "xxx@yyy.com", "186")
     }
 
     override fun findNamesByType(type: Int): Flow<String> {
