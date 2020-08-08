@@ -1,0 +1,8 @@
+[book]
+title = "Programming with Alibaba RSocket Broker"
+description = "Alibaba RSocket Broker开发指南"
+authors = ["linux_china"]
+language = "zh"
+
+[rust]
+edition = "2018"
