@@ -41,7 +41,7 @@ public class KotlinUserObjectMapperTest {
     public void testKtClass() throws Exception {
         KSerializer<?> serializer = getSerializer(KotlinUser.class);
         KotlinUser user = new KotlinUser(1, "linux_china", "email", "186");
-        String jsonText = Json.Default.stringify((SerializationStrategy<? super KotlinUser>) serializer, user);
+        String jsonText = Json.Default.encodeToString((SerializationStrategy<? super KotlinUser>) serializer, user);
         System.out.println(jsonText);
     }
 

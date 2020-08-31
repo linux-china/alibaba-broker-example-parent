@@ -1,7 +1,6 @@
 package com.alibaba.user
 
-import kotlinx.serialization.ImplicitReflectionSerializer
-import kotlinx.serialization.UnstableDefault
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.cbor.Cbor
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.protobuf.ProtoBuf
@@ -12,15 +11,14 @@ import org.junit.jupiter.api.Test
  *
  * @author linux_china
  */
-@UnstableDefault
-@ImplicitReflectionSerializer
+@ExperimentalSerializationApi
 class KotlinUserTest {
 
     @Test
     fun testJson() {
-        val jsonText = Json.stringify(KotlinUser.serializer(), constructUser())
+        val jsonText = Json.encodeToString(KotlinUser.serializer(), constructUser())
         println(jsonText)
-        val user = Json.parse(KotlinUser.serializer(), jsonText);
+        val user = Json.decodeFromString(KotlinUser.serializer(), jsonText);
         println(user.nick)
     }
 
@@ -28,16 +26,16 @@ class KotlinUserTest {
     fun testProtobuf() {
         val serializer = KotlinUser.serializer()
         println(serializer.javaClass)
-        val protoBytes = ProtoBuf.dump(serializer, constructUser())
-        val user = ProtoBuf.load(serializer, protoBytes);
+        val protoBytes = ProtoBuf.encodeToByteArray(serializer, constructUser())
+        val user = ProtoBuf.decodeFromByteArray(serializer, protoBytes);
         println(user.nick)
     }
 
     @Test
     fun testCbor() {
-        val cborBytes = Cbor.dump(KotlinUser.serializer(), constructUser())
+        val cborBytes = Cbor.encodeToByteArray(KotlinUser.serializer(), constructUser())
         println(cborBytes.size)
-        val user = Cbor.load(KotlinUser.serializer(), cborBytes);
+        val user = Cbor.decodeFromByteArray(KotlinUser.serializer(), cborBytes);
         println(user.nick)
     }
 
