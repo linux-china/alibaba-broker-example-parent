@@ -22,11 +22,11 @@
         <kotlinx-serialization.version>1.0.1</kotlinx-serialization.version>
         <kotlinx-coroutines.version>1.4.2</kotlinx-coroutines.version>
         <spring-boot.version>2.4.1</spring-boot.version>
-        <reactor-bom.version>2020.0.2</reactor-bom.version>
-        <netty.version>4.1.55.Final</netty.version>
+        <reactor-bom.version>2020.0.3</reactor-bom.version>
+        <netty.version>4.1.58.Final</netty.version>
         <rsocket.version>1.1.0</rsocket.version>
         <junit5.version>5.7.0</junit5.version>
-        <alibaba-rsocket.version>1.0.0.RC3</alibaba-rsocket.version>
+        <alibaba-rsocket.version>1.0.0.RC4</alibaba-rsocket.version>
     </properties>
 
     <dependencies>
@@ -109,7 +109,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-tcnative-boringssl-static</artifactId>
-                <version>2.0.35.Final</version>
+                <version>2.0.36.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
