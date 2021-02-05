@@ -3,7 +3,7 @@ package com.alibaba.user;
 import java.io.Serializable;
 
 /**
- * user class
+ * user bean
  *
  * @author leijuan
  */

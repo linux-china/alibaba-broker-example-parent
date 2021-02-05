@@ -1,6 +1,6 @@
 package com.alibaba.spring.boot.rsocket.demo;
 
-import com.alibaba.account.Account;
+import com.alibaba.user.Account;
 import com.alibaba.user.KotlinUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
