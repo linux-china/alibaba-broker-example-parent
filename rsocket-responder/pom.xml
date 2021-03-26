@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.alibaba.broker.example</groupId>
-        <artifactId>alibaba-broker-example-parent</artifactId>
+        <artifactId>alibaba-broker-kotlin-example</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 

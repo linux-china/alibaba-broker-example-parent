@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.alibaba.broker.example</groupId>
-    <artifactId>alibaba-broker-example-parent</artifactId>
+    <artifactId>alibaba-broker-kotlin-example</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Alibaba RSocket Broker Example Parent</name>
-    <description>RSocket Broker example for broker, responder and requester</description>
+    <name>Alibaba RSocket Broker Kotlin Example</name>
+    <description>RSocket Broker Kotlin example for broker, responder and requester</description>
 
     <modules>
         <module>user-service-api</module>
