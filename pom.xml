@@ -18,12 +18,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <kotlin.version>1.4.31</kotlin.version>
+        <kotlin.version>1.4.32</kotlin.version>
         <kotlinx-serialization.version>1.1.0</kotlinx-serialization.version>
         <kotlinx-coroutines.version>1.4.3</kotlinx-coroutines.version>
         <spring-boot.version>2.4.4</spring-boot.version>
         <reactor-bom.version>2020.0.5</reactor-bom.version>
-        <netty.version>4.1.60.Final</netty.version>
+        <netty.version>4.1.61.Final</netty.version>
         <rsocket.version>1.1.0</rsocket.version>
         <junit5.version>5.7.1</junit5.version>
         <alibaba-rsocket.version>1.0.1</alibaba-rsocket.version>
@@ -198,6 +198,7 @@
                 <configuration>
                     <args>
                         <arg>-Xjsr305=strict</arg>
+                        <arg>-Xskip-prerelease-check</arg>
                     </args>
                     <jvmTarget>${java.version}</jvmTarget>
                     <compilerPlugins>
