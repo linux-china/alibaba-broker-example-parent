@@ -1,0 +1,9 @@
+[
+  [
+    "com.alibaba.user.AccountService",
+    "com.alibaba.user.UserService",
+    "com.alibaba.user.Rx3UserService",
+    "com.alibaba.user.RxUserService",
+    "com.alibaba.user.UserKotlinService"
+  ]
+]
