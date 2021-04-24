@@ -22,12 +22,12 @@
         <kotlin.version>1.4.32</kotlin.version>
         <kotlinx-serialization.version>1.1.0</kotlinx-serialization.version>
         <kotlinx-coroutines.version>1.4.3</kotlinx-coroutines.version>
-        <spring-boot.version>2.4.4</spring-boot.version>
-        <reactor-bom.version>2020.0.5</reactor-bom.version>
-        <netty.version>4.1.61.Final</netty.version>
+        <spring-boot.version>2.4.5</spring-boot.version>
+        <reactor-bom.version>2020.0.6</reactor-bom.version>
+        <netty.version>4.1.63.Final</netty.version>
         <rsocket.version>1.1.0</rsocket.version>
         <junit5.version>5.7.1</junit5.version>
-        <alibaba-rsocket.version>1.0.1</alibaba-rsocket.version>
+        <alibaba-rsocket.version>1.1.0</alibaba-rsocket.version>
     </properties>
 
     <dependencies>
@@ -288,15 +288,12 @@
                 <plugin>
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
-                    <version>2.6.0</version>
+                    <version>3.0.0</version>
                     <configuration>
                         <allowInsecureRegistries>true</allowInsecureRegistries>
                         <from>
-                            <image>openjdk:8-jdk-slim</image>
+                            <image>adoptopenjdk:8-jdk-hotspot</image>
                         </from>
-                        <container>
-                            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-                        </container>
                     </configuration>
                 </plugin>
             </plugins>
