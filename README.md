@@ -17,3 +17,21 @@ Alibaba RSocket Kotlin Example: requester <-> Broker <-> responder 三者通讯�
 * Protobuf样例
 * Kotlin Coroutines & Async Flow
 
+# Free test with Alibaba RSocket Broker
+
+Alibaba RSocket Broker提供了免费的在线测试环境，你本地不需要启动本地的RSocket Broker就可以测试。
+
+* 获取访问RSocket Broker的JWT Token，命令如下：
+
+```
+curl https://jwt.alibroker.info
+```
+
+* 修改application.properties文件，添加如下配置：
+
+```
+rsocket.brokers=tcp://139.196.223.16:9999,tcp://139.196.223.138:9999
+rsocket.jwt-token=xxx
+```
+
+* 启动RSocket应用，就可以进行测试
