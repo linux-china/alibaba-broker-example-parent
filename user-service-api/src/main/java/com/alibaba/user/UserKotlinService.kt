@@ -25,6 +25,8 @@ interface UserKotlinService {
     //Request/Stream
     fun findNamesByType(type: Int): Flow<String>
 
+    fun findUserDatasByType(type: Int): Flow<UserData>
+
     //channel
     fun findNamesByIdFlow(idFlow: Flow<Int>): Flow<String>
 }
