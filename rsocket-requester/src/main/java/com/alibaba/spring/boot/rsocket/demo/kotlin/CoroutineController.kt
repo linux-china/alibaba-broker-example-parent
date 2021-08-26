@@ -1,6 +1,7 @@
 package com.alibaba.spring.boot.rsocket.demo.kotlin
 
 import com.alibaba.user.KotlinUser
+import com.alibaba.user.UserData
 import com.alibaba.user.UserKotlinService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -33,6 +34,11 @@ class CoroutineController {
     @GetMapping("/stream1")
     fun stream1(): Flow<String> {
         return userKotlinService.findNamesByType(1)
+    }
+
+    @GetMapping("/users")
+    fun users(): Flow<UserData> {
+        return userKotlinService.findUserDatasByType(1)
     }
 
     @GetMapping("/channel1")
