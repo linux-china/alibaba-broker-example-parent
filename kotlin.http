@@ -7,6 +7,9 @@ GET http://localhost:8181/kt/protobuf/user
 ### kotlin Flow as Stream
 GET http://localhost:8181/kt/stream1
 
+### kotlin Flow as Stream
+GET http://localhost:8181/kt/users
+
 ### kotlin Flow as channel
 GET http://localhost:8181/kt/channel1
 
