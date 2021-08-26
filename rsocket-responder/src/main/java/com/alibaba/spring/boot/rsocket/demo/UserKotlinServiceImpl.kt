@@ -1,7 +1,9 @@
 package com.alibaba.spring.boot.rsocket.demo
 
 import com.alibaba.rsocket.RSocketService
+import com.alibaba.user.Account
 import com.alibaba.user.KotlinUser
+import com.alibaba.user.UserData
 import com.alibaba.user.UserKotlinService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -30,6 +32,10 @@ class UserKotlinServiceImpl : UserKotlinService {
 
     override fun findNamesByType(type: Int): Flow<String> {
         return arrayOf("first", "second", "type: $type").asFlow();
+    }
+
+    override fun findUserDatasByType(type: Int): Flow<UserData> {
+        return arrayOf(UserData(1, "first"), UserData(2, "second")).asFlow();
     }
 
     override fun findNamesByIdFlow(idFlow: Flow<Int>): Flow<String> {
