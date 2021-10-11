@@ -7,7 +7,6 @@ import com.alibaba.user.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@SuppressWarnings({"SpringJavaInjectionPointsAutowiringInspection", "SpringFacetCodeInspection"})
 @Configuration(proxyBeanMethods = false)
 public class UserServicesAutoConfiguration {
 
