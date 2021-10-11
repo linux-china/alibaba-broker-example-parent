@@ -26,6 +26,11 @@ class CoroutineController {
         return "Hello " + userKotlinService.getNickById(1)
     }
 
+    @GetMapping("/job1")
+    suspend fun job1() {
+        return userKotlinService.job1();
+    }
+
     @GetMapping("/protobuf/user")
     suspend fun ktUser(): KotlinUser {
         return userKotlinService.findUserById(1)
