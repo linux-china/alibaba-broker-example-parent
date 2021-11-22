@@ -27,7 +27,7 @@
         <netty.version>4.1.70.Final</netty.version>
         <rsocket.version>1.1.1</rsocket.version>
         <junit5.version>5.8.1</junit5.version>
-        <alibaba-rsocket.version>1.1.1</alibaba-rsocket.version>
+        <alibaba-rsocket.version>1.1.2</alibaba-rsocket.version>
     </properties>
 
     <dependencies>
