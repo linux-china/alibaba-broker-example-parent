@@ -13,9 +13,9 @@
 
     <name>user-service-api</name>
     <properties>
-        <protobuf-java.version>3.17.3</protobuf-java.version>
+        <protobuf-java.version>3.19.4</protobuf-java.version>
         <rxjava2.version>2.2.21</rxjava2.version>
-        <rxjava3.version>3.1.2</rxjava3.version>
+        <rxjava3.version>3.1.4</rxjava3.version>
     </properties>
 
     <dependencies>
@@ -67,7 +67,7 @@
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.7.0</version>
             </extension>
         </extensions>
         <plugins>
