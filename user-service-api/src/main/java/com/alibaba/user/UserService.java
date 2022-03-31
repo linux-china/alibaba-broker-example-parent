@@ -1,5 +1,6 @@
 package com.alibaba.user;
 
+import com.alibaba.rsocket.RSocketServiceInterface;
 import com.alibaba.rsocket.ServiceMapping;
 import com.alibaba.rsocket.util.ByteBufBuilder;
 import io.netty.buffer.ByteBuf;
@@ -15,6 +16,7 @@ import java.util.List;
  *
  * @author leijuan
  */
+@RSocketServiceInterface
 public interface UserService {
     String cacheName = "com.alibaba.user.UserService";
 
