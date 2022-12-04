@@ -7,8 +7,6 @@ import io.netty.buffer.ByteBuf;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import javax.cache.annotation.CacheResult;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,8 +16,6 @@ import java.util.List;
  */
 @RSocketServiceInterface
 public interface UserService {
-    String cacheName = "com.alibaba.user.UserService";
-
     /**
      * RPC call to get user
      *
@@ -68,7 +64,6 @@ public interface UserService {
      *
      * @return result
      */
-    @CacheResult(cacheName = cacheName)
     Mono<String> getAppName();
 
     /**
@@ -96,7 +91,7 @@ public interface UserService {
     /**
      * channel(bi-direction stream)
      *
-     * @param point point
+     * @param userIdFlux point
      * @return user
      */
     Flux<User> recent(Flux<Integer> userIdFlux);
