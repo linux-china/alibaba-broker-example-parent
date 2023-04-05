@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Sinks;
-import reactor.extra.processor.TopicProcessor;
 
 import java.net.URI;
 import java.time.OffsetDateTime;
@@ -23,7 +22,6 @@ import java.util.UUID;
  * @author linux_china
  */
 @RestController
-@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class OpsController {
     @Autowired
     private Sinks.Many<CloudEventImpl> eventProcessor;
