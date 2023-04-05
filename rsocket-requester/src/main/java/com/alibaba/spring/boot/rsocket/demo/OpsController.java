@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Sinks;
 import reactor.extra.processor.TopicProcessor;
 
 import java.net.URI;
@@ -25,7 +26,7 @@ import java.util.UUID;
 @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class OpsController {
     @Autowired
-    private TopicProcessor<CloudEventImpl<?>> eventProcessor;
+    private Sinks.Many<CloudEventImpl> eventProcessor;
 
     @PostMapping("/upstream/update")
     public String updateUpstream(@RequestBody String uris) throws Exception {
@@ -44,7 +45,7 @@ public class OpsController {
                 .withSource(new URI("app://" + RSocketAppContext.ID))
                 .withData(upstreamClusterChangedEvent)
                 .build();
-        eventProcessor.onNext(cloudEvent);
+        eventProcessor.tryEmitNext(cloudEvent);
         return "success";
     }
 }
