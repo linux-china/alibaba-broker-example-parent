@@ -23,6 +23,7 @@ import java.util.UUID;
  */
 @RestController
 public class OpsController {
+    @SuppressWarnings("rawtypes")
     @Autowired
     private Sinks.Many<CloudEventImpl> eventProcessor;
 
