@@ -18,17 +18,18 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <kotlin.version>1.8.22</kotlin.version>
-        <kotlinx-serialization.version>1.5.1</kotlinx-serialization.version>
-        <kotlinx-coroutines.version>1.7.1</kotlinx-coroutines.version>
-        <spring-boot.version>2.7.14</spring-boot.version>
-        <reactor-bom.version>2020.0.34</reactor-bom.version>
-        <netty.version>4.1.95.Final</netty.version>
+        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+        <kotlin.version>2.0.20</kotlin.version>
+        <kotlinx-serialization.version>1.7.1</kotlinx-serialization.version>
+        <kotlinx-coroutines.version>1.9.0-RC.2</kotlinx-coroutines.version>
+        <spring-boot.version>3.3.3</spring-boot.version>
+        <reactor-bom.version>2023.0.9</reactor-bom.version>
+        <netty.version>4.1.102.Final</netty.version>
         <rsocket.version>1.1.4</rsocket.version>
-        <junit5.version>5.9.3</junit5.version>
+        <junit5.version>5.11.0</junit5.version>
         <alibaba-rsocket.version>1.1.5</alibaba-rsocket.version>
     </properties>
 
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>24.0.1</version>
+            <version>24.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -91,20 +92,13 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.24.2</version>
+            <version>3.26.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>${netty.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -116,6 +110,13 @@
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
                 <version>${reactor-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-bom</artifactId>
+                <version>1.12.9</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -150,7 +151,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
-                <version>2.14.2</version>
+                <version>2.17.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -197,11 +198,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <args>
-                        <arg>-Xjsr305=strict</arg>
-                        <arg>-Xskip-prerelease-check</arg>
-                    </args>
                     <jvmTarget>${java.version}</jvmTarget>
+                    <languageVersion>2.0</languageVersion>
                     <compilerPlugins>
                         <plugin>spring</plugin>
                         <!--<plugin>all-open</plugin>-->
@@ -224,7 +222,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.13.0</version>
                 <configuration>
                     <parameters>true</parameters>
                 </configuration>
@@ -287,11 +285,11 @@
                 <plugin>
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.4.3</version>
                     <configuration>
                         <allowInsecureRegistries>true</allowInsecureRegistries>
                         <from>
-                            <image>adoptopenjdk:8-jdk-hotspot</image>
+                            <image>eclipse-temurin:21-jdk</image>
                         </from>
                     </configuration>
                 </plugin>
